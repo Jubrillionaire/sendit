@@ -5,6 +5,7 @@ import { Client } from "pg";
 import routes from "./routes";
 const app = express();
 
+const PORT = process.env.PORT || 3000;
 
 dotenv.config()
 app.use(bodyParser.json());
@@ -66,7 +67,7 @@ const client = new Client({
 
    app.use("/api/v1", routes);
 
-app.listen(3000, function(){
+app.listen(PORT, function(){
    console.log('server is running on port 3000!!!')
 });
 
