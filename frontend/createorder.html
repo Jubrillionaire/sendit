@@ -1,0 +1,64 @@
+<html lang="en">
+  <head>
+    <title>Create Order</title>
+    <link rel="stylesheet" href="./styles/createorder.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="nav-link">
+        <ul>
+          <img class="logo" src="./images/parcel.png" alt="logo" />
+          <li><a id="nameBar"></a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="./userProfile.html">Dashboard</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section>
+      <div class="form">
+        <form method="POST" id="registration-form">
+          <h2>CREATE ORDER</h2>
+          <H3>Pickup Location</H3>
+          <input type="field" id="pickup" required />
+          <H3> Destination</H3>
+          <input type="field" id="destination" required />
+          <H3>Recipient's Name</H3>
+          <input type="field" id="reciName" />
+          <H3>Recipient's Mobile no</H3>
+          <input type="field" id="reciNum" required />
+          <input class="submit" type="submit" value="Create" />
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer-details">
+      <ul>
+        <li>
+          <h2>About us</h2>
+          <p>
+            SendIT is a parcel/courier service that <br />
+            delivers orders perfectly with utmost speed
+          </p>
+        </li>
+        <li>
+          <h2>Address</h2>
+          <p>
+            124, palm street, <br />
+            ikeja, Lagos.
+          </p>
+        </li>
+        <li>
+          <h2>Working Hours</h2>
+          <p>
+            Weekdays: 8am - 6pm <br />
+            Weekends: 10am - 4pm
+          </p>
+        </li>
+      </ul>
+    </footer>
+  </body>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script src="./scripts/createOrder.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+</html>

@@ -1,0 +1,79 @@
+.nav-link li {
+    display: inline;
+    margin:3%;
+} 
+.nav-link{
+    text-align: right;
+    display: unset;
+}
+.nav-link ul{
+    background:black;
+    height: 13%;
+    padding-top: 20px;
+}
+.nav-link ul  a{
+    text-decoration: none;
+    color:#EE813D;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 170%;
+}
+.form h2{
+    font-size:40px;
+    color: #EE813D;
+    
+}
+
+body{
+    background:white;
+}
+
+.logo{
+   width: 5%;
+   float: left
+}
+
+footer{
+    margin-top: 10px;
+   background: black;
+   height:30%;
+}
+
+.footer-details ul li{
+  float: left;
+  margin: 3%;
+  display: unset;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color:#EE813D;
+  opacity: 0.8;
+}
+
+.form{
+    margin-left: 35%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+input{
+    width: 50%;
+    height: 40px;
+}
+.submit{
+    margin-top: 20px;
+    background: green;
+    color: white;
+    border-radius: 10px;
+}
+.cancel a{
+    background: red;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    border: 3px solid red;
+    border-radius: 10px;
+}
+.cancel{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 20px;
+    font-weight: bolder;
+    margin-bottom: 70px;
+}
+
+

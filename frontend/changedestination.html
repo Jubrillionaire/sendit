@@ -1,0 +1,61 @@
+<html lang="en">
+  <head>
+    <title>Change Destination</title>
+    <link rel="stylesheet" href="./styles/changedestination.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="nav-link">
+        <ul>
+          <img class="logo" src="./images/parcel.png" alt="logo" />
+          <li><a href="userProfile.html" id="nameBar"></a></li>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="login.html" id="logout">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section>
+      <div class="form">
+        <form action="PATCH" id="edit-form">
+          <h2>EDIT</h2>
+          <H3>Parcel ID</H3>
+          <input type="field" id="parcelId" required/>
+          <H3>New Destination</H3>
+          <input type="field"  id="destination" required />
+          <div class="destination">
+                <input class="submit" type="submit" value="Change">
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer-details">
+      <ul>
+        <li>
+          <h2>About us</h2>
+          <p>
+            SendIT is a parcel/courier service that <br />
+            delivers orders perfectly with utmost speed
+          </p>
+        </li>
+        <li>
+          <h2>Address</h2>
+          <p>
+            124, palm street, <br />
+            ikeja, Lagos.
+          </p>
+        </li>
+        <li>
+          <h2>Working Hours</h2>
+          <p>
+            Weekdays: 8am - 6pm <br />
+            Weekends: 10am - 4pm
+          </p>
+        </li>
+      </ul>
+    </footer>
+  </body>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+<script src="./scripts/editDestination.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+</html>
