@@ -1,72 +1,131 @@
-.nav-link li {
-    display: inline;
-    margin:3%;
-} 
-.nav-link{
-    text-align: right;
-    display: unset;
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0 auto
 }
-.nav-link ul{
+
+.first-ul{
+    display: flex;
     background:black;
     height: 13%;
-    padding-top: 20px;
+    margin-bottom:0px;
+   
 }
 
-.nav-link ul  a{
-    text-decoration: none;
-    color:#EE813D;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 170%;
+.first-ul > li{
+    list-style: none;
+    padding: 30px;
 }
+   
+
+.first-ul a{
+    text-decoration: none;
+    font-size: 25px;
+    color: #EE813D;
+}
+
 
  .img-section{
-    background-image: url("../images/deli.jpg"); 
-    background-size: 100%;
+    background-image: url("..//images/deli.jpg"); 
+    background-size:cover;
+    background-position: center;
+    padding-top: 1px;
     height: 100%;
     opacity: 0.8;
-
 }
-.img-section h1{
-    text-align: center;
-    padding-top:80px;
+ .img-section h1{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bolder;
     font-size: 50px;
     color:rgb(51, 16, 16);
     opacity: 1;
-}
+} 
 body{
     background:white;
 }
 
-.logo{
-   width: 5%;
-   float: left
+ .first-ul .logo{
+ width: 40px;
+ padding:30px;
+ height: 40%;
 }
 
-footer{
-    margin-top: 10px;
-   background: black;
-   height:30%;
+.footer-details ul{
+    display: flex;
+    background: black;
+    color:#EE813D;
+    justify-content: space-around;
 }
 
-.footer-details ul li{
-  float: left;
-  margin: 3%;
-  display: unset;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color:#EE8144;
+.footer-details li{
+ list-style: none
+
 }
 
+.img-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
-.img-section a{
+ .img-section a{
  
 color: white;
  text-decoration: none;
  font-size: 30px;
- margin-left: 45%;
  border: 5px solid #EE813D;
  background: #EE813D;
  border-radius: 10px;
+
+} 
+
+@media screen and (max-width: 720px){
+
+    .first-ul{
+        display: flex;
+        background:black;
+        height: 13%;
+        margin-bottom:0;
+        justify-content: center;
+        align-items: center;
+       
+    }
+
+    .first-ul .logo{
+        width: 40px;
+        padding:25px;
+        height: 40%;
+       }
+    
+    .first-ul > li{
+        list-style: none;
+        padding: 20px;
+    }
+       
+    
+    .first-ul a{
+        text-decoration: none;
+        font-size: 22px;
+        color: #EE813D;
+    }
+
+    .img-section h1{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bolder;
+        font-size: 30px;
+        color:rgb(51, 16, 16);
+        opacity: 1;
+    } 
+
+
+
+    .footer-details ul{
+        display: flex;
+        background: black;
+        color:#EE813D;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+    }
 
 }

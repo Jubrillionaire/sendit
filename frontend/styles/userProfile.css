@@ -1,21 +1,21 @@
-.nav-link li {
-    display: inline;
-    margin:3%;
-} 
-.nav-link{
-    text-align: right;
-    display: unset;
-}
-.nav-link ul{
+.first-ul{
+    display: flex;
     background:black;
     height: 13%;
-    padding-top: 20px;
+    margin-bottom:0px;
+   
 }
-.nav-link ul  a{
+
+.first-ul > li{
+    list-style: none;
+    padding: 30px;
+}
+   
+
+.first-ul a{
     text-decoration: none;
-    color:#EE813D;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 170%;
+    font-size: 25px;
+    color: #EE813D;
 }
 
 
@@ -23,25 +23,23 @@ body{
     background:white;
 }
 
-.logo{
-   width: 5%;
-   float: left
+.first-ul .logo{
+    width: 40px;
+    padding:30px;
+    height: 40%;
+   }
+
+   .footer-details ul{
+    display: flex;
+    background: black;
+    color:#EE813D;
+    justify-content: space-around;
 }
 
-footer{
-    margin-top: 10px;
-   background: black;
-   height:30%;
+.footer-details li{
+ list-style: none
+
 }
-
-.footer-details ul li{
-    float: left;
-    margin: 3%;
-    display: unset;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color:#EE8144;
-  }
-
 
 .form{
     margin-left: 40%;
@@ -172,6 +170,72 @@ table{
 .bottom{
     margin-bottom: 40px;
 }
+
+
+@media screen and (max-width: 720px){
+
+    .first-ul{
+        display: flex;
+        background:black;
+        height: 13%;
+        margin-bottom:0;
+        justify-content: center;
+        align-items: center;
+       
+    }
+
+    .first-ul .logo{
+        width: 40px;
+        padding:25px;
+        height: 40%;
+       }
+    
+    .first-ul > li{
+        list-style: none;
+        padding: 20px;
+    }
+       
+    
+    .first-ul a{
+        text-decoration: none;
+        font-size: 22px;
+        color: #EE813D;
+    }
+
+
+
+
+    .footer-details ul{
+        display: flex;
+        background: black;
+        color:#EE813D;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+    }
+
+    .form h2{
+        font-size:30px;
+        color: #EE813D;
+    
+    }
+
+    
+.order {
+    margin-left: 10%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    border: 2px solid black;
+    border-radius: 15px;
+    background: grey;
+    width: 50%;
+    color: black;
+    opacity: 0.9;
+}
+
+
+}
+
 
 
 
