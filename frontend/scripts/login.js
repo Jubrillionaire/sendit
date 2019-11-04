@@ -41,3 +41,14 @@ const login = event => {
 
 document.getElementById('login-form').addEventListener('submit', login);
 
+
+$(document).ready(function(){
+  $(".hamburger-nav").on("click", function(){
+
+  $(".first-ul").toggleClass("open");
+
+  });
+});
+
+
+

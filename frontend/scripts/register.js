@@ -47,3 +47,11 @@ const register = event => {
 
 document.getElementById('registration-form').addEventListener('submit', register);
 
+
+$(document).ready(function(){
+  $(".hamburger-nav").on("click", function(){
+
+  $(".first-ul").toggleClass("open");
+
+  });
+});

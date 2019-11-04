@@ -1,3 +1,8 @@
+body{
+    margin: 0 auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .first-ul{
     display: flex;
     background:black;
@@ -10,7 +15,10 @@
     list-style: none;
     padding: 30px;
 }
-   
+.hamburger-nav{
+    height: 0;
+    width: 0;
+}
 
 .first-ul a{
     text-decoration: none;
@@ -74,45 +82,96 @@ input{
 }
 
 @media screen and (max-width: 720px){
-
-    .first-ul{
-        display: flex;
-        background:black;
-        height: 13%;
-        margin-bottom:0;
-        justify-content: center;
-        align-items: center;
-       
+    .wrapper{
+        background-color: black;
+        padding-bottom:px;
     }
-
-    .first-ul .logo{
-        width: 40px;
-        padding:25px;
-        height: 40%;
-       }
     
-    .first-ul > li{
-        list-style: none;
-        padding: 20px;
-    }
+    
+        .hamburger-nav{
+            display:block;
+            height: 40px;
+            width: 35px;
+        }
+    
+        .first-ul{
+            display:flex;
+            flex-direction: column;
+            background:#EE813D;
+            height: 26%;
+            margin-bottom:0;
+            justify-content: start;
+            align-items: start; 
+             opacity: 1;
+            margin-top: 0px;
+            padding-left: 0;
+            display: block;
+            
+        } 
+    
        
     
-    .first-ul a{
-        text-decoration: none;
-        font-size: 22px;
-        color: #EE813D;
-    }
+        .first-ul.open{
+              height:0%;
+              opacity: 0;
+              background: blue;
+             transition-duration: 0.5s;
+             transition-timing-function: linear;
+        }
+    
+        .first-ul .logo{
+            width: 0px;
+            padding:2px;
+            height: 0%;
+            overflow: hidden;
+           }
+        
+        .first-ul > li{
+            list-style: none;
+            padding: 10px;
+            border-bottom: 1px solid rgb(51, 16, 16);
+        
+        }
+           
+        
+        .first-ul a{
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: bolder;
+            color:rgb(51, 16, 16);
+        }
+    
+        
+    
+        .first-ul >li :hover{
+            color: white;
+        }
+    
+        .img-section h1{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bolder;
+            font-size: 30px;
+            color:rgb(51, 16, 16);
+            opacity: 1;
+        } 
+    
+    
+    
+        .footer-details ul{
+            display: flex;
+            background: black;
+            color:#EE813D;
+            justify-content: space-around;
+            flex-wrap: wrap;
+    
+        }
 
-
-
-
-    .footer-details ul{
-        display: flex;
-        background: black;
-        color:#EE813D;
-        justify-content: space-around;
-        flex-wrap: wrap;
-
-    }
+        .form h2{
+            font-size:40px;
+            color: #EE813D;
+        
+        }
 
 }
+
+

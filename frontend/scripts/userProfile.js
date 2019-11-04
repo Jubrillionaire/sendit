@@ -74,4 +74,12 @@ const renderTableData = (data, ordersTable) => {
                            `;
     ordersTable.append(parcelRow);
   });
+
 };
+$(document).ready(function(){
+  $(".hamburger-nav").on("click", function(){
+
+  $(".first-ul").toggleClass("open");
+
+  });
+});

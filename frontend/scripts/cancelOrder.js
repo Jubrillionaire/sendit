@@ -39,5 +39,13 @@ const cancelOrder = event => {
 
 document.getElementById("edit-form").addEventListener("submit", cancelOrder);
 
+$(document).ready(function(){
+  $(".hamburger-nav").on("click", function(){
+
+  $(".first-ul").toggleClass("open");
+
+  });
+});
+
 
 

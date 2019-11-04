@@ -44,4 +44,13 @@ const createOrder = event => {
 
 document.getElementById("registration-form").addEventListener("submit", createOrder);
 
+$(document).ready(function(){
+  $(".hamburger-nav").on("click", function(){
+
+  $(".first-ul").toggleClass("open");
+
+  });
+});
+
+
   

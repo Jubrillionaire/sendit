@@ -6,12 +6,18 @@
   <body>
     <header>
       <nav class="nav-link">
+          <div class="wrapper">
+              <a href="#"> <img src="./images/ham.png"  class="hamburger-nav"></a>
+          </div>
+
+          <div class="wrapper2"></div>
         <ul class="first-ul">
           <img class="logo" src="./images/parcel.png" alt="logo" />
           <li><a id="nameBar"></a></li>
           <li><a href="index.html">Home</a></li>
           <li><a href="./userProfile.html">Dashboard</a></li>
         </ul>
+      </div>
       </nav>
     </header>
 
@@ -20,13 +26,13 @@
         <form method="POST" id="registration-form">
           <h2>CREATE ORDER</h2>
           <H3>Pickup Location</H3>
-          <input type="text" id="pickup" required />
+          <input type="field" id="pickup" required />
           <H3> Destination</H3>
-          <input type="text" id="destination" required />
+          <input type="field" id="destination" required />
           <H3>Recipient's Name</H3>
-          <input type="text" id="reciName" />
+          <input type="field" id="reciName" />
           <H3>Recipient's Mobile no</H3>
-          <input type="text" id="reciNum" required />
+          <input type="field" id="reciNum" required />
           <input class="submit" type="submit" value="Create" />
         </form>
       </div>
