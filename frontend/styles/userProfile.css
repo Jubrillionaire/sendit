@@ -199,7 +199,7 @@ table{
             display:flex;
             flex-direction: column;
             background:#EE813D;
-            height: 23.6%;
+            height: auto;
             margin-bottom:0;
             justify-content: start;
             align-items: start; 
