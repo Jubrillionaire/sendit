@@ -45,11 +45,7 @@ const register = event => {
     }).catch(err => console.log('err occured', err));
 }
 
-toastr.options = {
-  timeOut: 0,
-  extendedTimeOut: 0,
-  tapToDismiss: false
-};
+
 
 document.getElementById('registration-form').addEventListener ('submit', register);
 
