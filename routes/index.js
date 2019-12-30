@@ -7,4 +7,4 @@ const app = express();
 app.use('/', parcelRoute);
 app.use('/', userRoute)
 
-export default app;
+export default app; 

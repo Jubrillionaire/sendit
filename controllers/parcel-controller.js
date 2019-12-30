@@ -1,8 +1,9 @@
-import express from "express";
-import bodyParser from "body-parser";
+
 import { validationResult } from "express-validator/check"; 
 
-//CREATE PARCEL CONTROLLER!!
+//========================CREATE PARCEL CONTROLLER=================================
+
+
 export const createParcel = (req, res) => {
   const { user_id, pickup_location, destination, recipient_name, recipient_phone_no } = req.body;
   const errors = validationResult(req);
@@ -53,7 +54,7 @@ export const changeDestination = (req, res) => {
   const { parcelId, destination, user_id } = req.body;
 
   if(req.decoded.id === parseInt(user_id, 10)){
-    client.query('UPDATE parcels SET destination = $2 WHERE id = $1 AND user_id = $3 RETURNING *', [parcelId, destination, user_id], (err, results) => {
+    client.query(`UPDATE parcels SET destination = $2 WHERE id = $1 AND user_id = $3 RETURNING *`, [parcelId, destination, user_id], (err, results) => {
       if(err){
         res.send(err);
       }else if(!results.rows[0]){
@@ -81,7 +82,7 @@ export const changeStatus = (req, res) =>{
   }else{
     client.query(`UPDATE parcels SET status = $1 WHERE id = $2 RETURNING *`,[status, parcelId], (err, updatedStatus) => {
       if(err){
-        res.sen(err)
+        res.send(err)
       }else{
          res.send({
            msg: "delivery status changed successfully",
@@ -94,7 +95,7 @@ export const changeStatus = (req, res) =>{
 }
 
 export const changeLocation = (req, res) =>{
-  const {presentLocation, percelId} = req.body;
+  const {presentLocation, parcelId} = req.body;
  if(req.decode.role !== admin){
    res.send("only admins can change the present location")
  }else{

@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import { validationResult } from "express-validator/check";
 import { tokenGenerator } from "../middlewares/middlewares";
 
-//CREATE USER
+//============================CREATE USER ===================================================
 export const createUser = (req, res) => {
     const{first_name, last_name, email, phone_no, password} = req.body;
     
@@ -34,7 +34,7 @@ export const createUser = (req, res) => {
 }
 
 
-//USER LOGIN 
+//==================================USER LOGIN  =====================================================
 export const userLogin = (req, res) => {
     const { email, password } = req.body;
     client.query(

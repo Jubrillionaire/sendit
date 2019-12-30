@@ -27,7 +27,7 @@ export const authorizeUser = (req, res, next) => {
         } else { 
           req.decoded = decoded;
           next();
-        }
+        } 
       });
     } else {
       res.status(401).json({

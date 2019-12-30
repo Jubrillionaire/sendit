@@ -19,15 +19,15 @@ const client = new Client({
  
  global.client = client;
  
- client
-   .connect()
-   .then(() => {
-     console.log("database connected!");
+ client.connect()
+ .then(() => {
+ console.log("database connected!");
  
+ //==============USERS TABLE=========================
      client.query(
        `CREATE TABLE IF NOT EXISTS users(
      id serial PRIMARY KEY,
-     first_name VARCHAR NOT NULL,                  
+     first_name VARCHAR  NOT NULL,                  
      last_name VARCHAR NOT NULL,
      email VARCHAR UNIQUE NOT NULL,
      phone_no VARCHAR NOT NULL,
@@ -39,6 +39,8 @@ const client = new Client({
            console.log(err);
          } else {
            console.log("users table created");
+
+//============PARCELS TABLE===========================
            client.query(
              `CREATE TABLE IF NOT EXISTS parcels(
          id serial PRIMARY KEY,

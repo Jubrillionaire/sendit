@@ -18,7 +18,7 @@ const register = event => {
   .then(res => res.json())
   
     .then(res => {
-      if (res.token) {
+      if (res.token){
         fetch('/api/v1/me', {
           headers: {
             'Authorization': res.token,
@@ -45,7 +45,7 @@ const register = event => {
     }).catch(err => console.log('err occured', err));
 }
 
-document.getElementById('registration-form').addEventListener('submit', register);
+document.getElementById('registration-form').addEventListener ('submit', register);
 
 
 $(document).ready(function(){
@@ -54,4 +54,4 @@ $(document).ready(function(){
   $(".first-ul").toggleClass("open");
 
   });
-});
+});  

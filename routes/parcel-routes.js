@@ -1,12 +1,10 @@
 import express from "express";
 import bodyParser from "body-parser";
-import { validationResult } from "express-validator/check";
 import {createParcel, getAllParcels,  changeDestination, changeStatus, changeLocation, cancelParcel} from "../controllers/parcel-controller";
-const app = express();
-import { check } from 'express-validator/check';       
+const app = express();      
 import {authorizeUser} from "../middlewares/middlewares"
 
-app.use(bodyParser());
+
 
 //Create a parcel delivery order
 app.post("/parcels", authorizeUser, createParcel);

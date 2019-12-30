@@ -36,6 +36,21 @@ fetch(`/api/v1/users/${userId}/parcels`, {
       data.sort((a, b) => a.id - b.id);
       renderTableData(data, ordersTable);
 
+      const renderTableData = (data, ordersTable) => {
+        data.forEach(parcel => {
+          let parcelRow = document.createElement("tr");
+          parcelRow.innerHTML = `<th scope="row">${parcel.id}</th>
+                                <td>${parcel.pickup_location}</td>
+                                <td class="remove-second">${parcel.destination}</td>
+                                <td>${parcel.recipient_name}</td>
+                                <td>${parcel.recipient_phone_no}</td>
+                                <td>${parcel.status}</td>
+                                 `;
+          ordersTable.append(parcelRow);
+        });
+      
+      };
+
       document.getElementById("ordersLength").innerHTML = `${data.length}`;
       //Number of items in transit
       const transitOrders = data.filter(val => val.status === "in transit").length;
@@ -62,20 +77,7 @@ fetch(`/api/v1/users/${userId}/parcels`, {
     }
   });
 
-const renderTableData = (data, ordersTable) => {
-  data.forEach(parcel => {
-    let parcelRow = document.createElement("tr");
-    parcelRow.innerHTML = `<th scope="row">${parcel.id}</th>
-                          <td>${parcel.pickup_location}</td>
-                          <td class="remove-second">${parcel.destination}</td>
-                          <td>${parcel.recipient_name}</td>
-                          <td>${parcel.recipient_phone_no}</td>
-                          <td>${parcel.status}</td>
-                           `;
-    ordersTable.append(parcelRow);
-  });
 
-};
 $(document).ready(function(){
   $(".hamburger-nav").on("click", function(){
 
