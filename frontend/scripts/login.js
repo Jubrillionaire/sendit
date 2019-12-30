@@ -81,7 +81,7 @@ const login = event => {
                 window.location.href = "./userProfile.html";
                 alert("logged in successfully!");
             } else {
-                toastr.error(res.msg);
+                toastr.error('Sorry, only a MEMBER can log in to this page');
             }
         })
         .catch(err => console.log('err occured', err));
