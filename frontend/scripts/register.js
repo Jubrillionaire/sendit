@@ -45,8 +45,6 @@ const register = event => {
     }).catch(err => console.log('err occured', err));
 }
 
-
-
 document.getElementById('registration-form').addEventListener ('submit', register);
 
 
