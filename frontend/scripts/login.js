@@ -79,9 +79,9 @@ const login = event => {
                 localStorage.setItem('userId', res.userId);
                 localStorage.setItem('firstname', data.first_name);
                 window.location.href = "./userProfile.html";
-               toastr.success(res.msg);
+                alert("logged in successfully!");
             } else {
-                toastr.error('Sorry, only a MEMBER can log in to this page');
+                toastr.error(res.msg);
             }
         })
         .catch(err => console.log('err occured', err));
@@ -93,12 +93,12 @@ const login = event => {
 
 document.getElementById('login-form').addEventListener('submit', login);
 
-//handling menu bar
-$(document).ready(function(){
+ $(document).ready(function(){
   $(".hamburger-nav").on("click", function(){
 
   $(".first-ul").toggleClass("open");
 
   });
 });
+
 
