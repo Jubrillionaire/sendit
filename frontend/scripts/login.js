@@ -27,7 +27,7 @@ const login = event => {
                 localStorage.setItem('userId', res.userId);
                 localStorage.setItem('firstname', data.first_name);
                 window.location.href = "./userProfile.html";
-                alert("logged in successfully!");
+               toastr.success(res.msg)
             } else {
                 toastr.error('Sorry, only a MEMBER can log in to this page');
             }
