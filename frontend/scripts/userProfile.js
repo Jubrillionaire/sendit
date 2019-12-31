@@ -20,7 +20,7 @@ document.querySelector("#nameBar").innerHTML = firstname.toUpperCase();
 
 //fetch request to render all user parcels into the table
 const userId = localStorage.getItem("userId");
-fetch(`/api/v1/users/${userId}/parcels`, {
+fetch(`https://send-it-parcel.herokuapp.com/api/v1/users/${userId}/parcels`, {
   method: "GET",
   headers: {
     Authorization: token
@@ -34,7 +34,7 @@ fetch(`/api/v1/users/${userId}/parcels`, {
         "You do not have any Parcel Delivery Order yet";
     } else {
       data.sort((a, b) => a.id - b.id);
-      renderTableData(data, ordersTable);
+      // renderTableData(data, ordersTable);
 
       const renderTableData = (data, ordersTable) => {
         data.forEach(parcel => {
@@ -50,6 +50,8 @@ fetch(`/api/v1/users/${userId}/parcels`, {
         });
       
       };
+
+       renderTableData(data, ordersTable);
 
       document.getElementById("ordersLength").innerHTML = `${data.length}`;
       //Number of items in transit

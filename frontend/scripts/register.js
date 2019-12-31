@@ -2,7 +2,7 @@
 const register = event => {
   event.preventDefault();
 
-  fetch('/api/v1/users', {
+  fetch('https://send-it-parcel.herokuapp.com/api/v1/users', {
     method: 'POST',
     headers: {
       'Content-type': 'application/json'
@@ -16,10 +16,9 @@ const register = event => {
     })
   })
   .then(res => res.json())
-  
     .then(res => {
       if (res.token){
-        fetch('/api/v1/me', {
+        fetch('https://send-it-parcel.herokuapp.com/api/v1/me', {
           headers: {
             'Authorization': res.token,
           }
@@ -31,12 +30,12 @@ const register = event => {
               localStorage.setItem('userId', res.userId);
               localStorage.setItem('firstname', data.first_name);
               window.location.href = "./userProfile.html";
-              alert("Account created successfully!")
+             toastr.success("Account created successfully!")
             }
           })
           .catch(err => console.log('err occured', err));
       } else if (res.msg) {
-        toastr.error(res.msg);
+        toastr.error("Email exists, please enter another");
       } else {
         res.errors.forEach(err => {
           toastr.error(`${err.param}: ${err.msg}`);

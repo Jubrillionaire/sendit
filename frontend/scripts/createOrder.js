@@ -11,7 +11,7 @@ document.querySelector("#nameBar").innerHTML = firstname.toUpperCase();
 
 const createOrder = event => {
   event.preventDefault();
- fetch("/api/v1/parcels", {
+ fetch("https://send-it-parcel.herokuapp.com/api/v1/parcels", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -29,8 +29,8 @@ const createOrder = event => {
     .then(res => {
       console.log(res)
       if (res.id) {
-        alert("parcel created successfully!");
         window.location.href = "./userProfile.html";
+        toastr.success("parcel created successfully!");
       } else if (res.msg) {
         toastr.error(res.msg);
       } else {

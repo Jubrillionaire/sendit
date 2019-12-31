@@ -13,7 +13,7 @@ document.querySelector("#nameBar").innerHTML = firstname.toUpperCase();
 const cancelOrder = event => {
   event.preventDefault();
 
-  fetch("/api/v1/parcels/cancel", {
+  fetch("https://send-it-parcel.herokuapp.com/api/v1/parcels/cancel", {
     method: "PATCH",
     headers: {
       "Content-type": "application/json",
@@ -28,7 +28,7 @@ const cancelOrder = event => {
     .then(res => {
       console.log(res);
       if (res.details) {
-        alert("Parcel Order cancelled successfully");
+        toastr.success("Parcel Order cancelled successfully");
         window.location.href = "./userProfile.html";
       } else if (res.msg) {
         toastr.error(res.msg);
