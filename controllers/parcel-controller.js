@@ -95,7 +95,7 @@ export const changeDestination = (req, res) => {
 
 export const changeStatus = (req, res) => {
   const {status, parcelId} = req.body;
-  if(req.decoded !== 'admin'){
+  if(req.decoded.role !== 'admin'){
     res.send({
       msg: 'failed! Only admins can access this endpoint'
     });
