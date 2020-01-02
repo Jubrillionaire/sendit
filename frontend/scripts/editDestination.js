@@ -13,7 +13,7 @@ document.querySelector("#nameBar").innerHTML = firstname.toUpperCase();
 const changeDestination = event => {
   event.preventDefault();
 
-  fetch("/api/v1/parcels/destination", {
+  fetch("https://send-it-parcel.herokuapp.com/api/v1/parcels/destination", {
     method: "PATCH",
     headers: {
       "Content-type": "application/json",

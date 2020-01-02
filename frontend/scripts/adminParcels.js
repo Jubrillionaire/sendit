@@ -24,7 +24,7 @@ document.querySelector("#nameBar").innerHTML = firstname.toUpperCase();
 
 //fetch request to render all user parcels into the table
 const userId = localStorage.getItem("userId");
-fetch("/api/v1/parcels", {
+fetch("https://send-it-parcel.herokuapp.com/api/v1/parcels", {
   method: "GET",
   headers: {
     Authorization: token

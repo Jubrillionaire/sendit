@@ -2,7 +2,7 @@
 const register = event => {
   event.preventDefault();
 
-  fetch('/api/v1/users', {
+  fetch('https://send-it-parcel.herokuapp.com/api/v1/users', {
     method: 'POST',
     headers: {
       'Content-type': 'application/json'
@@ -18,7 +18,7 @@ const register = event => {
   .then(res => res.json())
     .then(res => {
       if (res.token){
-        fetch('/api/v1/me', {
+        fetch('https://send-it-parcel.herokuapp.com/api/v1/me', {
           headers: {
             'Authorization': res.token,
           }

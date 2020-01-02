@@ -11,7 +11,7 @@ document.querySelector("#nameBar").innerHTML = firstname.toUpperCase();
 
 const createOrder = event => {
   event.preventDefault();
- fetch("/api/v1/parcels", {
+ fetch("https://send-it-parcel.herokuapp.com/api/v1/parcels", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

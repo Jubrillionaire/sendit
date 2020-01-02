@@ -3,7 +3,7 @@
 const login = event => {
   event.preventDefault();
 
-  fetch('/api/v1/users/login', {
+  fetch('https://send-it-parcel.herokuapp.com/api/v1/users/login', {
     method: 'POST',
     headers: {
       'Accept': 'application/json, text/plain, */*',
@@ -17,7 +17,7 @@ const login = event => {
     .then(res => {
       console.log(res);
       if (res.token) {
-        fetch('/api/v1/me', {
+        fetch('https://send-it-parcel.herokuapp.com/api/v1/me', {
             headers:{
                 'Authorization': res.token,
             }
