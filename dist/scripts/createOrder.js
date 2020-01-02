@@ -12,7 +12,7 @@ document.querySelector("#nameBar").innerHTML = firstname.toUpperCase();
 
 var createOrder = function createOrder(event) {
   event.preventDefault();
-  fetch("http://localhost:3000/api/v1/parcels", {
+  fetch("https://send-it-parcel.herokuapp.com/api/v1/parcels", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

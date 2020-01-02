@@ -12,7 +12,7 @@ if(role !== "admin"){
 
 const editLocation= (event) => {
  event.preventDefault();
- fetch("http://localhost:3000/api/v1/parcels/location", {
+ fetch("https://send-it-parcel.herokuapp.com/api/v1/parcels/location", {
      method: "PATCH",
      headers: {
          "Content-type": "application/json", 
