@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "heroku-postbuild": "rm -rf ./dist && babel . --out-dir ./dist --ignore ./node_modules,./.heroku ./frontend && cp -r ./frontend ./dist ",
-    "start": "npm run heroku-postbuild && node build/app.js",
+    "start": "node dist/app.js",
     "start-dev": "nodemon ./app.js --exec babel-node"
   },
   "author": "Jubril",
