@@ -13,7 +13,7 @@ document.querySelector("#nameBar").innerHTML = firstname.toUpperCase();
 const cancelOrder = event => {
   event.preventDefault();
 
-  fetch("http://localhost:3000/api/v1/parcels/cancel", {
+  fetch("api/v1/parcels/cancel", {
     method: "PATCH",
     headers: {
       "Content-type": "application/json",

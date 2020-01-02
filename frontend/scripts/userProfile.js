@@ -22,7 +22,7 @@ document.querySelector("#nameBar").innerHTML = firstname.toUpperCase();
 
 //fetch request to render all user parcels into the table
 const userId = localStorage.getItem("userId");
-fetch(`http://localhost:3000/api/v1/users/${userId}/parcels`, {
+fetch(`api/v1/users/${userId}/parcels`, {
   method: "GET",
   headers: {
     Authorization: token
