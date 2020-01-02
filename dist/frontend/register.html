@@ -1,0 +1,81 @@
+<html lang="en">
+  <head>
+    <title>Register</title>
+    <link rel="stylesheet" href="./styles/register.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
+  </head>
+  <body>
+      <header>
+          <nav class="nav-link">
+            <div class="wrapper">
+              <a href="#"> <img src="./images/ham.png"  class="hamburger-nav"></a>
+            </div>
+           
+            <div class="wrapper2">
+            <ul class="first-ul">
+             <a href="#"><img class="logo" src="./images/parcel.png"  alt="logo" /></a>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="register.html">Register</a></li>
+              <li><a href="login.html">Login</a></li>
+            </ul>
+          </div>
+          </nav>
+        </header>
+
+   <section>
+       <div class="form">
+          <form method="POST" id="registration-form">
+              <h2>REGISTER</h2>
+              <H3>First Name (Required)</H3>
+              <input type="text" id="firstname" placeholder="enter first name" required>
+              <H3>Last Name (Required)</H3>
+              <input type="text" id="lastname" placeholder="enter last name"  required>
+              <H3>Email (Required)</H3>
+              <input type="email" id="email" placeholder="email" required>
+              <H3>Phone No (Required)</H3>
+              <input type="text" id="phone-no" placeholder="enter phone no"  required>
+              <H3>Password  (Required)</H3>
+              <input type="password" id="password" placeholder="enter password" required>
+              
+              <input class="submit" type="submit" value="submit">
+            <div class="login">
+              <label for="">Already have an account?</label>
+              <a href="login.html">login</a>
+            </div>
+
+            
+          </form>
+       </div>
+
+   </section>
+
+    <footer class="footer-details">
+      <ul>
+        <li>
+          <h2>About us</h2>
+          <p>
+            SendIT is a parcel/courier service that <br />
+            delivers orders perfectly with utmost speed
+          </p>
+        </li>
+        <li>
+          <h2>Address</h2>
+          <p>
+            124, palm street, <br />
+            ikeja, Lagos.
+          </p>
+        </li>
+        <li>
+          <h2>Working Hours</h2>
+          <p>
+            Weekdays: 8am - 6pm <br />
+            Weekends: 10am - 4pm
+          </p>
+        </li>
+      </ul>
+    </footer>
+  </body>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+<script src="./scripts/register.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+</html>

@@ -9,11 +9,11 @@ if(!token){
 
 document.querySelector("#nameBar").innerHTML = firstname.toUpperCase();
 
-//handling request to cancel a specific parcel delivery order
-const cancelOrder = event => {
+//handling request to change a specific parcel destination
+const changeDestination = event => {
   event.preventDefault();
 
-  fetch("/api/v1/parcels/cancel", {
+  fetch("http://localhost:3000/api/v1/parcels/destination", {
     method: "PATCH",
     headers: {
       "Content-type": "application/json",
@@ -21,6 +21,7 @@ const cancelOrder = event => {
     },
     body: JSON.stringify({
       parcelId: document.getElementById("parcelId").value,
+      destination: document.getElementById("destination").value,
       user_id: userId
     })
   })
@@ -28,7 +29,7 @@ const cancelOrder = event => {
     .then(res => {
       console.log(res);
       if (res.details) {
-        toastr.success("Parcel Order cancelled successfully");
+        toastr.success("Destination changed successfully!");
         window.location.href = "./userProfile.html";
       } else if (res.msg) {
         toastr.error(res.msg);
@@ -37,15 +38,15 @@ const cancelOrder = event => {
     .catch(err => console.log("error occured", err));
 };
 
-document.getElementById("edit-form").addEventListener("submit", cancelOrder);
+document
+  .getElementById("edit-form")
+  .addEventListener("submit", changeDestination);
 
-$(document).ready(function(){
-  $(".hamburger-nav").on("click", function(){
 
-  $(".first-ul").toggleClass("open");
-
+  $(document).ready(function(){
+    $(".hamburger-nav").on("click", function(){
+  
+    $(".first-ul").toggleClass("open");
+  
+    });
   });
-});
-
-
-

@@ -1,0 +1,168 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0 auto;
+}
+
+.hamburger-nav{
+    height: 0;
+    width: 0;
+}
+
+.first-ul{
+    display: flex;
+    background:black;
+    height: 13%;
+    margin-bottom:0px;
+   
+}
+
+.first-ul > li{
+    list-style: none;
+    padding: 30px;
+}
+   
+
+.first-ul a{
+    text-decoration: none;
+    font-size: 25px;
+    color: #EE813D;
+}
+.form h2{
+    font-size:40px;
+    color: #EE813D;
+    
+}
+
+body{
+    background:white;
+}
+
+.first-ul .logo{
+    width: 40px;
+    padding:30px;
+    height: 40%;
+   }
+
+   .footer-details ul{
+    display: flex;
+    background: black;
+    color:#EE813D;
+    justify-content: space-around;
+}
+
+.footer-details li{
+ list-style: none
+
+}
+
+.form{
+    margin-left: 35%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+input{
+    width: 50%;
+    height: 40px;
+}
+.submit{
+    margin-top: 20px;
+    background: green;
+    color: white;
+    border-radius: 10px;
+}
+.cancel a{
+    background: red;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    border: 3px solid red;
+    border-radius: 10px;
+}
+.cancel{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 20px;
+    font-weight: bolder;
+    margin-bottom: 70px;
+}
+
+
+@media screen and (max-width: 720px){
+    .wrapper{
+        background-color: black;
+        padding-bottom:px;
+    }
+    
+    
+        .hamburger-nav{
+            display:block;
+            height: 40px;
+            width: 35px;
+        }
+    
+        .first-ul{
+            display:flex;
+            flex-direction: column;
+            background:#EE813D;
+            height: auto;
+            margin-bottom:0;
+            justify-content: start;
+            align-items: start; 
+             opacity: 1;
+            margin-top: 0px;
+            padding-left: 0;
+            display: block;
+            
+        } 
+    
+       
+    
+        .first-ul.open{
+              height:0%;
+              opacity: 0;
+              background: blue;
+             transition-duration: 0.5s;
+             transition-timing-function: linear;
+        }
+    
+        .first-ul .logo{
+            width: 0px;
+            padding:2px;
+            height: 0%;
+            overflow: hidden;
+           }
+        
+        .first-ul > li{
+            list-style: none;
+            padding: 10px;
+            border-bottom: 1px solid rgb(51, 16, 16);
+        
+        }
+           
+        
+        .first-ul a{
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: bolder;
+            color:rgb(51, 16, 16);
+        }
+    
+        
+    
+        .first-ul >li :hover{
+            color: white;
+        }
+
+    
+    
+    
+        .footer-details ul{
+            display: flex;
+            background: black;
+            color:#EE813D;
+            justify-content: space-around;
+            flex-wrap: wrap;
+    
+        }
+    
+    }
+    
+    

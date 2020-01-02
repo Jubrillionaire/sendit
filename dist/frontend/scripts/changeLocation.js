@@ -6,13 +6,13 @@ if(!token){
 }
 
 if(role !== "admin"){
-  window.location = "./adminParcels.html"
+  window.location = "./userProfile.html"
 }
 
 
-const editStatus = (event) => {
+const editLocation= (event) => {
  event.preventDefault();
- fetch("/api/v1/parcels/status", {
+ fetch("http://localhost:3000/api/v1/parcels/location", {
      method: "PATCH",
      headers: {
          "Content-type": "application/json", 
@@ -20,17 +20,16 @@ const editStatus = (event) => {
      },
      body: JSON.stringify({
          parcelId: document.getElementById("parcelId").value,
-         status: document.getElementById("status").value
+         presentLocation: document.getElementById("presentLocation").value
      })
  })
  .then(res => res.json())
  .then(res => {
-    console.log(res);
     if (res.details) {
       window.location ="adminParcels.html"
-     toastr.success("status changed successfully!");
+     toastr.success("location changed successfully!");
     } else if (res.msg) {
-      toastr.error(res.msg);
+      toastr.error("unable to change destination");
     }
   })
   .catch(err => console.log("error occured", err));
@@ -38,7 +37,7 @@ const editStatus = (event) => {
 
 document
   .getElementById("edit-form")
-  .addEventListener("submit", editStatus);
+  .addEventListener("submit", editLocation);
 
 
 $(document).ready(function(){
