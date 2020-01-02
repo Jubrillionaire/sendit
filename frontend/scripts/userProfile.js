@@ -7,9 +7,7 @@ if(!token){
   window.location.href = './login.html';
 }
 
-if(role !== "member"){
-  window.location = "./adminParcels.html"
-}
+
 
 //handling logout
 const logout = document.getElementById('logout');
