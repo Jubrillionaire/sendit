@@ -1,14 +1,14 @@
-//getting items stored into local storage during login and registration
+ //getting items stored into local storage during login and registration
 const firstname = localStorage.getItem("firstname");
 const token = localStorage.getItem('token');
 const role = localStorage.getItem("role");
-//preventing unauthorised users from accessing the page
+
 if(!token){
   window.location.href = './login.html';
 }
 
-if(role !== "member"){
-  window.location = "./adminParcels.html"
+if(role !== "admin"){
+  window.location = "./userProfile.html"
 }
 
 //handling logout
@@ -24,7 +24,7 @@ document.querySelector("#nameBar").innerHTML = firstname.toUpperCase();
 
 //fetch request to render all user parcels into the table
 const userId = localStorage.getItem("userId");
-fetch(`https://send-it-parcel.herokuapp.com/api/v1/users/${userId}/parcels`, {
+fetch("https://send-it-parcel.herokuapp.com/api/v1/parcels", {
   method: "GET",
   headers: {
     Authorization: token
@@ -35,7 +35,7 @@ fetch(`https://send-it-parcel.herokuapp.com/api/v1/users/${userId}/parcels`, {
     const ordersTable = document.querySelector(".parcelDetails");
     if (!data.length) {
       document.querySelector("#error-msg").innerHTML =
-        "You do not have any Parcel Delivery Order yet";
+        "No parcels in Database";
     } else {
       data.sort((a, b) => a.id - b.id);
       // renderTableData(data, ordersTable);
@@ -57,28 +57,16 @@ fetch(`https://send-it-parcel.herokuapp.com/api/v1/users/${userId}/parcels`, {
 
        renderTableData(data, ordersTable);
 
-      document.getElementById("ordersLength").innerHTML = `${data.length}`;
-      //Number of items in transit
-      const transitOrders = data.filter(val => val.status === "in transit").length;
 
-      document.getElementById("transit" ).innerHTML = `${transitOrders}`;
-
-      //number of delivered items
-      const delivered = data.filter(val => val.status === "delivered").length;
-      document.getElementById("delivered" ).innerHTML = `${delivered}`;
-
-      //number of cancelled items
-      const cancelled = data.filter(val => val.status === "cancelled").length; 
-      document.getElementById( "cancelled").innerHTML = `${cancelled}`;
 
       const dest = document.createElement('h2');
       dest.className = ('destinationh2'); 
-      dest.innerHTML = `<div class="top"><a href="changedestination.html" class="heya"> Change Destination</a> </div>`;
+      dest.innerHTML = `<div class="top"><a href="changeStatus.html" class="heya">Change Status</a> </div>`;
       document.getElementById('dassh').append(dest);
 
       const cancel = document.createElement('h2');
       cancel.className = ('destinationh2');
-      cancel.innerHTML = `<div class="bottom"><a href="cancelorder.html" class="hey"> Cancel Order</a></div>`;
+      cancel.innerHTML = `<div class="bottom"><a href="changeLocation.html" class="hey"> Change Location</a></div>`;
       document.getElementById('dassh').append(cancel);
     }
   });

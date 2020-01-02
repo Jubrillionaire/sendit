@@ -16,7 +16,8 @@ app.post("/users", [
     check('phone_no', 'Mobile number must be valid').isMobilePhone(),
     check('password')
     .isLength({min: 5}).withMessage('Password must have a minimum length of 5')
-  ], createUser);
+  ], 
+  createUser);
 
 
   //login endpoint

@@ -1,9 +1,10 @@
-
+import express from 'express';
+import bodyParser from 'body-parser';
 import { validationResult } from "express-validator/check"; 
 
+const app = express()
+app.use(bodyParser.json())
 //========================CREATE PARCEL CONTROLLER=================================
-
-
 export const createParcel = (req, res) => {
   const { user_id, pickup_location, destination, recipient_name, recipient_phone_no } = req.body;
   const errors = validationResult(req);
@@ -49,6 +50,23 @@ export const getAllParcels = (req, res) => {
   }
 }
    
+export const getParcels = (req, res) => {
+  if(req.decoded.role !== 'admin'){
+    res.send({
+      msg: 'failed! Only admins can access this endpoint'
+    }) 
+}else{
+  client.query("SELECT * FROM parcels", (err,resp) => {
+    if(err){
+      console.log("sorry cant fetch data")
+    }else{
+     res.send(resp.rows)
+    }
+  })
+}
+}
+
+
 
 export const changeDestination = (req, res) => {
   const { parcelId, destination, user_id } = req.body;
@@ -74,32 +92,34 @@ export const changeDestination = (req, res) => {
   }
 }
 
-export const changeStatus = (req, res) =>{
-  const {status, parcelId} = req.body;
 
-  if(req.decoded.role !== admin){
-    res.send({ msg: 'only admins can change the status of a delivery'})
-  }else{
-    client.query(`UPDATE parcels SET status = $1 WHERE id = $2 RETURNING *`,[status, parcelId], (err, updatedStatus) => {
+export const changeStatus = (req, res) => {
+  const {status, parcelId} = req.body;
+  if(req.decoded !== 'admin'){
+    res.send({
+      msg: 'failed! Only admins can access this endpoint'
+    });
+  }
+  else {
+    client.query('UPDATE Parcels SET status = $1 WHERE id = $2 RETURNING *', [status, parcelId], (err, results) => {
       if(err){
-        res.send(err)
+        res.send(err);
       }else{
-         res.send({
-           msg: "delivery status changed successfully",
-           details: updatedStatus.rows[0]
-         }); 
+        res.send({
+          msg: 'status changed successfully',
+          details: results.rows[0]
+        });
       }
     })
   }
-
 }
 
 export const changeLocation = (req, res) =>{
   const {presentLocation, parcelId} = req.body;
- if(req.decode.role !== admin){
+ if(req.decoded.role !== 'admin'){
    res.send("only admins can change the present location")
  }else{
-   client.query(`UPDATE parcels SET location = $1 WHERE id = $2 RETURNING *`, [presentLocation, parcelId], (err, updatedLocation) => {
+   client.query(`UPDATE parcels SET pickup_location = $1 WHERE id = $2 RETURNING *`, [presentLocation, parcelId], (err, updatedLocation) => {
      if(err){
        console.log(err)
      }else{
@@ -109,7 +129,7 @@ export const changeLocation = (req, res) =>{
        })
      }
    });
- }
+  }
 }
 
 export const cancelParcel = (req, res) => {

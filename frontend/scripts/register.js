@@ -25,7 +25,7 @@ const register = event => {
         }).then(res => res.json())
         
           .then(data => {
-            if (data.role === 'member') {
+            if ((data.role === 'member') || (data.role === 'admin')) {
               localStorage.setItem('token', res.token);
               localStorage.setItem('userId', res.userId);
               localStorage.setItem('firstname', data.first_name);
