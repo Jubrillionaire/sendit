@@ -12,7 +12,7 @@ document.querySelector("#nameBar").innerHTML = firstname.toUpperCase(); //handli
 
 var cancelOrder = function cancelOrder(event) {
   event.preventDefault();
-  fetch("https://send-it-parcel.herokuapp.com/api/v1/parcels/cancel", {
+  fetch("http://localhost:3000/api/v1/parcels/cancel", {
     method: "PATCH",
     headers: {
       "Content-type": "application/json",

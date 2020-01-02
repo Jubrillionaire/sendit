@@ -12,7 +12,7 @@ document.querySelector("#nameBar").innerHTML = firstname.toUpperCase(); //handli
 
 var changeDestination = function changeDestination(event) {
   event.preventDefault();
-  fetch("https://send-it-parcel.herokuapp.com/api/v1/parcels/destination", {
+  fetch("http://localhost:3000/api/v1/parcels/destination", {
     method: "PATCH",
     headers: {
       "Content-type": "application/json",

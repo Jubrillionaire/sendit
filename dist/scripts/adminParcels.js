@@ -22,7 +22,7 @@ logout.addEventListener('click', function () {
 document.querySelector("#nameBar").innerHTML = firstname.toUpperCase(); //fetch request to render all user parcels into the table
 
 var userId = localStorage.getItem("userId");
-fetch("https://send-it-parcel.herokuapp.com/api/v1/parcels", {
+fetch("http://localhost:3000/api/v1/parcels", {
   method: "GET",
   headers: {
     Authorization: token
