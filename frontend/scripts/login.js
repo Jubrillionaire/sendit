@@ -1,4 +1,10 @@
+const role = localStorage.getItem("role");
 
+if(role === "member"){
+  window.location.href = './userProfile.html';
+}else if(role === "admin"){
+  window.location.href = './adminParcels.html';
+}
 
 const login = event => {
   event.preventDefault();

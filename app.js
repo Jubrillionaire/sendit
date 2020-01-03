@@ -36,7 +36,7 @@ const client = new Client({
      email VARCHAR UNIQUE NOT NULL,
      phone_no VARCHAR NOT NULL,
      password VARCHAR NOT NULL,
-     role VARCHAR DEFAULT 'admin'
+     role VARCHAR DEFAULT 'member'
     )`, 
        (err, res) => {
          if (err) {

@@ -7,8 +7,6 @@ if(!token){
   window.location.href = './login.html';
 }
 
-
-
 //handling logout
 const logout = document.getElementById('logout');
 
