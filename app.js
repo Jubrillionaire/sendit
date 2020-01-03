@@ -31,7 +31,7 @@ const client = new Client({
      client.query(
        `CREATE TABLE IF NOT EXISTS users(
      id serial PRIMARY KEY,
-     first_name VARCHAR  NOT NULL,                  
+     first_name VARCHAR NOT NULL,                  
      last_name VARCHAR NOT NULL,
      email VARCHAR UNIQUE NOT NULL,
      phone_no VARCHAR NOT NULL,

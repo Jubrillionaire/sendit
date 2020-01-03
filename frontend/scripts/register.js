@@ -29,7 +29,8 @@ const register = event => {
               localStorage.setItem('token', res.token);
               localStorage.setItem('userId', res.userId);
               localStorage.setItem('firstname', data.first_name);
-              window.location.href = "./userProfile.html";
+              localStorage.setItem('role', data.role);
+              {data.role === "member" ? (window.location.href = "./userProfile.html") : (window.location.href = "./adminParcels.html")}
              toastr.success("Account created successfully!")
             }
           })

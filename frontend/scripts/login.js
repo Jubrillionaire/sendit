@@ -24,6 +24,7 @@ const login = event => {
         })
         .then(res => res.json())
         .then(data => {
+          console.log("coming from login", data)
             if ((data.role === 'member') || (data.role === 'admin')){
                 localStorage.setItem('token', res.token);
                 localStorage.setItem('userId', res.userId);
