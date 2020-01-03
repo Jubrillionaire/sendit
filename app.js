@@ -37,7 +37,7 @@ const client = new Client({
      phone_no VARCHAR NOT NULL,
      password VARCHAR NOT NULL,
      role VARCHAR DEFAULT 'member'
-    )`, 
+    )`,
        (err, res) => {
          if (err) {
            console.log(err);

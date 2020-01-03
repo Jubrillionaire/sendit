@@ -1,0 +1,174 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0 auto;
+}
+
+.hamburger-nav{
+    height: 0;
+    width: 0;
+}
+
+.first-ul{
+    display: flex;
+    background:black;
+    height: 13%;
+    margin-bottom:0px;
+   
+}
+
+.first-ul > li{
+    list-style: none;
+    padding: 30px;
+}
+   
+
+.first-ul a{
+    text-decoration: none;
+    font-size: 25px;
+    color: #EE813D;
+}
+
+
+ .img-section{
+    background-image: url("../images/deli.jpg"); 
+    background-size:cover;
+    background-position: center;
+    padding-top: 1px;
+    height: 100%;
+    opacity: 0.8;
+}
+ .img-section h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    font-size: 50px;
+    color:rgb(51, 16, 16);
+    opacity: 1;
+} 
+body{
+    background:white;
+}
+
+ .first-ul .logo{
+ width: 40px;
+ padding:30px;
+ height: 40%;
+}
+
+.footer-details ul{
+    display: flex;
+    background: black;
+    color:#EE813D;
+    justify-content: space-around;
+}
+
+.footer-details li{
+ list-style: none
+
+}
+
+.img-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+ .img-section a{
+ 
+color: white;
+ text-decoration: none;
+ font-size: 30px;
+ border: 5px solid #EE813D;
+ background: #EE813D;
+ border-radius: 10px;
+
+} 
+
+
+@media screen and (max-width: 720px){
+.wrapper{
+    background-color: black;
+    padding-bottom:px;
+}
+
+
+    .hamburger-nav{
+        display:block;
+        height: 40px;
+        width: 35px;
+    }
+
+    .first-ul{
+        display:flex;
+        flex-direction: column;
+        background:#EE813D;
+        height: auto;
+        margin-bottom:0;
+        justify-content: start;
+        align-items: start; 
+         opacity: 1;
+        margin-top: 0px;
+        padding-left: 0;
+        display: block;
+        
+    } 
+
+   
+
+    .first-ul.open{
+          height:0%;
+          opacity: 0;
+          background: blue;
+         transition-duration: 0.5s;
+         transition-timing-function: linear;
+    }
+
+    .first-ul .logo{
+        width: 0px;
+        padding:2px;
+        height: 0%;
+        overflow: hidden;
+       }
+    
+    .first-ul > li{
+        list-style: none;
+        padding: 10px;
+        border-bottom: 1px solid rgb(51, 16, 16);
+    
+    }
+       
+    
+    .first-ul a{
+        text-decoration: none;
+        font-size: 17px;
+        font-weight: bolder;
+        color:rgb(51, 16, 16);
+    }
+
+    
+
+    .first-ul >li :hover{
+        color: white;
+    }
+
+    .img-section h1{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bolder;
+        font-size: 30px;
+        color:rgb(51, 16, 16);
+        opacity: 1;
+    } 
+
+
+
+    .footer-details ul{
+        display: flex;
+        background: black;
+        color:#EE813D;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+    }
+
+}
+
