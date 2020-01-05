@@ -6,7 +6,7 @@ if(!token){
 }
 
 if(role !== "admin"){
-  window.location = "./adminParcels.html"
+  window.location = "./userProfile.html"
 }
 
 
